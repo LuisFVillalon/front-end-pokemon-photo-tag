@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { ArrowRight } from 'react-bootstrap-icons';
 import { useNavigate } from 'react-router-dom';
-import dotenv from 'dotenv';
-dotenv.config();
+import env from "react-dotenv";
 
 import Pinsir from '../assets/pokemon/0127Pinsir.png';
 import Kabuto from '../assets/pokemon/0140Kabuto.png';
@@ -140,7 +139,7 @@ function FinishedGame({
     // eslint-disable-next-line no-underscore-dangle
     const lastRecordID = topThirty[topThirty.length - 1]._id;
     try {
-      const response = await fetch(`${process.env.API_URL}` + `${lastRecordID}`, {
+      const response = await fetch(`${env.API_URL}` + `${lastRecordID}`, {
         method: 'DELETE',
       });
       if (!response.ok) {
@@ -171,7 +170,7 @@ function FinishedGame({
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${process.env.API_URL}`, {
+      const response = await fetch(`${env.API_URL}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
