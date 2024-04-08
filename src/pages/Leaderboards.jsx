@@ -2,7 +2,7 @@ import uniqid from 'uniqid';
 import '../style.css';
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
-import { ArrowLeft } from 'react-bootstrap-icons';
+import { ArrowLeft, Display } from 'react-bootstrap-icons';
 import levelData from '../LevelData/allLevelData';
 
 function sortList(array) {
@@ -34,6 +34,7 @@ function Leaderboards({ topThirty }) {
     />
   ));
 
+  }
   return (
     <>
       <div className="leaderboard-header-container">
@@ -43,7 +44,7 @@ function Leaderboards({ topThirty }) {
             Back
           </button>
         </div>
-        <header>Leaderboards</header>
+          <header>Top 10 Best Times!</header>
       </div>
       <div className="levels-container">
         {levelList}
