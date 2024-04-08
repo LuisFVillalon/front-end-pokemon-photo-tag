@@ -208,7 +208,7 @@ function Game(props) {
 
   useEffect(() => {
     setPokemonToFindInLevel();
-  });
+  }, []);
 
   return (
     <div className="body-level">
