@@ -34,7 +34,6 @@ function Leaderboards({ topThirty }) {
     />
   ));
 
-  }
   return (
     <>
       <div className="leaderboard-header-container">
