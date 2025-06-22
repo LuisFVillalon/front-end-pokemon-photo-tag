@@ -13,7 +13,9 @@ function Home(props) {
       <Levels
         props={props}
       />
-      <ScoreBoard />
+      <ScoreBoard 
+        props={props}
+      />
     </div>
   );
 }

@@ -8,38 +8,38 @@ import './style.css';
 function App() {
   const [currentBoard, setCurrentBoard] = useState('');
   const [currentLevel, setCurrentLevel] = useState('');
-  // const [topThirty, setTopThirty] = useState([]);
-  // const [isLoading, setIsLoading] = useState(true);
-  // const [error, setError] = useState(null);
+  const [topThirty, setTopThirty] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch(import.meta.env.VITE_API_URL);
-  //       if (!response.ok) {
-  //         throw new Error('Network response was not ok.');
-  //       }
-  //       const result = await response.json();
-  //       setTopThirty(result);
-  //     } catch (err) {
-  //       setError(err);
-  //     } finally {
-  //       setIsLoading(false);
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
-  // if (isLoading) {
-  //   return <div>Loading...</div>;
-  // }
-  // if (error) {
-  //   return (
-  //     <div>
-  //       Error:
-  //       {error.message}
-  //     </div>
-  //   );
-  // }
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(import.meta.env.VITE_API_URL);
+        if (!response.ok) {
+          throw new Error('Network response was not ok.');
+        }
+        const result = await response.json();
+        setTopThirty(result);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+  if (error) {
+    return (
+      <div>
+        Error:
+        {error.message}
+      </div>
+    );
+  }
 
   return (
     <div className="body-container">
@@ -61,8 +61,8 @@ function App() {
             <Game
               currentBoard={currentBoard}
               currentLevel={currentLevel}
-              // topThirty={topThirty}
-              // setTopThirty={setTopThirty}
+              topThirty={topThirty}
+              setTopThirty={setTopThirty}
             />
           )}
         />
@@ -70,7 +70,7 @@ function App() {
           path="/leaderboards"
           element={(
             <Leaderboards
-              // topThirty={topThirty}
+              topThirty={topThirty}
             />
           )}
         />

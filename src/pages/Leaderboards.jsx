@@ -23,7 +23,6 @@ function Leaderboards({ topThirty }) {
       setRecordsPerLevelList={setRecordsPerLevelList}
     />
   ));
-
   sortList(topThirty);
 
   const list = topThirty.map((user) => (
