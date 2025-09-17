@@ -35,7 +35,7 @@ const Zero = {
   level: 0,
   name: 'Full House',
   board: HouseLevel,
-  cover: 'https://www.j-opolis.com/fhretro/images/fh_logos/fh_title.jpg',
+  cover: 'https://upload.wikimedia.org/wikipedia/commons/4/47/Full_House_1987_TV_series_logo.png',
   characters: [
     {
       name: 'Golbat',

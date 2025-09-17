@@ -1,4 +1,4 @@
-import { useState,  } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Leaderboards from './pages/Leaderboards';
@@ -30,7 +30,7 @@ function App() {
     fetchData();
   }, []);
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <h1>Loading...</h1>;
   }
   if (error) {
     return (
